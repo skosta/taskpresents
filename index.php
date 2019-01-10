@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once "config/system.php";
-require_once "functions/route.php";
+
+require_once($_SERVER['DOCUMENT_ROOT']."/functions/route.php");
 Route::start();
 
 ?>

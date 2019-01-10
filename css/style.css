@@ -1,0 +1,38 @@
+body,html{
+	margin:0px;
+	padding:0px;
+}
+
+span.exitlk,.get-present{
+    display: inline-block;
+    background: red;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+	margin: 10px;
+}
+.get-present{
+	background:green;
+}
+.mypresents {
+    display: block;
+    margin: 10px;
+}
+.mypresents-block {
+    font-size: 14px;
+    padding: 10px;
+    padding-left: 0px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+}
+.mypresents-inline {
+    display: inline-block;
+    width: 150px;
+}
+.mypresents-inline.converpoints {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

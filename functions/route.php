@@ -10,7 +10,7 @@ class Route
 		}
 		
 		if(file_exists($file)){
-			$Member = new Member();		
+			require_once "./config/system.php";	
 			require_once "./includes/header.php";			
 			if($Member->id){
 				require_once $file;
