@@ -1,11 +1,11 @@
 <body>
 	<div class="auth">
-		<input type="email" class="mail"/>
-		<input type="password" class="pass"/>
+		<input type="email" class="mail" placeholder="Ваш электронный адрес"/>
+		<input type="password" class="pass" placeholder="Пароль"/>
 		<span class="okauth">Отпарвить</span>
 		<span class="errormessage"></span>
-	</div>
-	<a href="/registration/">Регистрация</a>
+		<a href="/registration/">Регистрация</a>
+	</div>	
 	<script>
 		$( ".okauth" ).click(function() {
 			var mail = $(".mail").val();

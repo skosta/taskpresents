@@ -4,10 +4,7 @@
 	Получить приз!
 </div>
 <?php 
-
 $listPresents = $Presents->myPresents();
-
-
 ?>
 <div class="mypresents">
 	<span class="mypresents-header">Мои подарки</span>
@@ -22,6 +19,7 @@ $listPresents = $Presents->myPresents();
 			if($res["typepresent"] == "Деньги"){
 				echo "<div class='mypresents-inline converpoints' present='".$res["id"]."'>Перевести в баллы</div>";
 			}
+			echo "<div class='mypresents-inline cancelpresent' present='".$res["id"]."'>Откзаться</div>";
 			?>
 		</div>
 		<?php
@@ -53,6 +51,16 @@ $listPresents = $Presents->myPresents();
 			  type: "POST",
 			  data:"idPresents="+$(this).attr("present"),
 			  url: "/ajax/converpoints.php",
+			  success: function(info){
+				location.href = "/";
+			  }
+			});
+		});
+		$( ".cancelpresent" ).click(function() {
+			$.ajax({
+			  type: "POST",
+			  data:"idPresents="+$(this).attr("present"),
+			  url: "/ajax/cancelpresent.php",
 			  success: function(info){
 				location.href = "/";
 			  }

@@ -1,19 +1,15 @@
 <body>
 	<div class="auth">
-		<label>E-mail</label>
-		<input type="email" class="mail"/>
-		<label>Пароль</label>
-		<input type="password" class="pass"/>		
-		<label>Имя</label>
-		<input type="text" class="name"/>
-		<label>Фамилия</label>
-		<input type="text" class="surname"/>
-		<label>Телефон</label>
-		<input type="text" class="phone"/>
+		<input type="email" class="mail" placeholder="E-mail"/>
+		<input type="password" class="pass" placeholder="Пароль"/>		
+		<input type="text" class="name" placeholder="Имя"/>
+		<input type="text" class="surname" placeholder="Фамилия"/>
+		<input type="text" class="phone" placeholder="Телефон"/>
 		<span class="okreg">Отправить</span>
 		<span class="errormessage"></span>
+		<a href="/auth/">Авторизация</a>
 	</div>
-	<a href="/auth/">Авторизация</a>
+	
 	
 	<script>
 		$( ".okreg" ).click(function() {

@@ -84,11 +84,30 @@ class Presents{
 		return;
 	}
 	
+	//Денежные призы пользователям
+	public function sendMoney($random){			
+		$query = $this->connect_db->query("SELECT * FROM members WHERE members.id not in (SELECT userid from presents)");
+		while($res = $query->fetch()){
+			if($res["id"]){
+				$this->insertPrsent("Деньги",$random,$res["id"]);
+			}
+		}
+		return;
+	}
 	
-	public function insertPrsent($typePresent,$random){
+	public function insertPrsent($typePresent,$random,$userid){
 		$regDate = date("d-m-Y");
+		if(!$userid){
+			$userid = $this->memberId;
+		}
 		$query = $this->connect_db->prepare("INSERT INTO presents (userid, typepresent, itogo, datepresent) VALUES (?,?,?,?)"); //Записываем приз в бд
-		$query->execute(array($this->memberId,$typePresent,$random,$regDate));
+		$query->execute(array($userid,$typePresent,$random,$regDate));
+		return;
+	}
+	
+	public function cancelPresent($idPresent){
+		$query = $this->connect_db->prepare("DELETE FROM presents WHERE id= ?");
+		$query->execute(array($idPresent));
 		return;
 	}
 	
